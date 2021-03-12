@@ -43,20 +43,20 @@ user doesn't have to explicitly copy the JAR file or even install Java to run th
 ## Installation
 
 Clone the project and open it in your IDEA.
-```shell 
+``` 
 git clone https://github.com/LuciferUchiha/Hydra.git
 ```
 
 ## Usage:
 ### Run locally
 Execute the gradle run task in the root folder of the project.
-```shell 
+``` 
 gradle run
 ```
 
 ### Run JUnit5 test
 Execute the gradle run task in the root folder of the project.
-```shell 
+``` 
 gradle test
 ```
 
@@ -66,7 +66,7 @@ On macOS, you can close the application with the Activity Monitor.
 
 ### Build JAR
 Execute the gradle jar task in the root folder of the project.
-```shell 
+``` 
 gradle clean jar
 ```
 
@@ -111,7 +111,7 @@ Meaning of options:
   jpackage command. On macOS, we can pass package type as DMG or PKG. The tool supports MSI and EXE options on Windows and DEB and RPM options on Linux.
 
 The above command will create the Hydra-1.0.msi file for us. If you run the installer and install the application 
-you will find it under ``Program Files/Hydra```.
+you will find it under `Program Files/Hydra`.
 
 
 ## License
