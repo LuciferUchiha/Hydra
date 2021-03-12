@@ -26,6 +26,7 @@ user doesn't have to explicitly copy the JAR file or even install Java to run th
 ### Built With
 * [Java15](https://openjdk.java.net/projects/jdk/15/)
 * [JavaFx11+](https://openjfx.io/index.html)
+* [Junit5](https://junit.org/junit5/docs/current/user-guide/)
 * [JPackage](https://docs.oracle.com/en/java/javase/14/jpackage/packaging-overview.html#GUID-C1027043-587D-418D-8188-EF8F44A4C06A)
 * [Gradle](https://gradle.org/)
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/)
@@ -42,6 +43,12 @@ git clone https://github.com/LuciferUchiha/Hydra.git
 Execute the gradle run task in the root folder of the project.
 ```shell 
 gradle run
+```
+
+### Run JUnit5 test
+Execute the gradle run task in the root folder of the project.
+```shell 
+gradle test
 ```
 
 ### Close application
