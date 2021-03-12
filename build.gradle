@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+group 'com.george'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+mainClassName = 'hydra.Hydra'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'hydra.Launcher'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+javafx {
+    version = "14.0.1"
+    modules = [ 'javafx.controls' ]
+}
