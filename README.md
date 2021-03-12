@@ -13,6 +13,7 @@
   * [Build DMG package for macOS](#build-dmg-package-for-macos)
   * [Build MSI package for Windows](#build-msi-package-for-windows)
 * [License](#license)
+* [Contribute](#contribute)
 
 ## About The Project
 
@@ -108,5 +109,7 @@ you will find it under ``Program Files/Hydra```.
 
 
 ## License
+Distributed under the MIT License. See `LICENSE.md` for more information.
 
-Distributed under the MIT License. See `LICENSE` for more information.
+## Contribute
+If you wish to contribute, see `CONTRIBUTING.md` for more information.
