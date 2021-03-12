@@ -5,6 +5,11 @@
   * [Built With](#built-with)
 * [Installation](#installation)
 * [Usage](#usage)
+  * [Run Locally](#run-locally)
+  * [Close Application](#close-application)
+  * [Build JAR](#build-jar)
+  * [Build DMG package for macOS](#build-dmg-package-for-macos)
+  * [Build MSI package for Windows](#build-msi-package-for-windows)
 * [License](#license)
 
 ## About The Project
@@ -39,13 +44,17 @@ Execute the gradle run task in the root folder of the project.
 gradle run
 ```
 
+### Close application
+On Windows you can close the application with the Task Manager.
+On macOS, you can close the application with the Activity Monitor.
+
 ### Build JAR
 Execute the gradle jar task in the root folder of the project.
 ```shell 
 gradle clean jar
 ```
 
-### Build DMG
+### Build DMG package for macOS
 To create a DMG package run the following command in the root of the project:
 ```
 jpackage --input build/libs/ \
@@ -67,16 +76,14 @@ Meaning of options:
 
 The above command will create the Hydra-1.0.dmg file for us.
 
-### Build MSI
+### Build MSI package for Windows
 To create a MSI package run the following command in the root of the project:
 ```
-jpackage --input build/libs/ \
---name Hydra \
---main-jar Hydra-1.0.jar \
---dest build/packages \
---icon src/main/resources/iconWindows.ico \
---type msi \
+jpackage --input build/libs/ --name Hydra --main-jar Hydra-1.0.jar --dest build/packages --icon src/main/resources/iconWindows.ico --type msi
 ```
+
+If you don't already have WIX toolset you will prompted to install the toolset from https://wixtoolset.org/.
+
 Meaning of options:
 
 - input: Location of the input JAR file
@@ -87,7 +94,8 @@ Meaning of options:
 - type: What kind of installer do we want to create? This depends on the base OS on which we're running the
   jpackage command. On macOS, we can pass package type as DMG or PKG. The tool supports MSI and EXE options on Windows and DEB and RPM options on Linux.
 
-The above command will create the Hydra-1.0.msi file for us.
+The above command will create the Hydra-1.0.msi file for us. If you run the installer and install the application 
+you will find it under ``Program Files/Hydra```.
 
 
 ## License
