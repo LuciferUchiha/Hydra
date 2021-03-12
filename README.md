@@ -34,6 +34,11 @@ user doesn't have to explicitly copy the JAR file or even install Java to run th
 * [Gradle](https://gradle.org/)
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
+## Prerequisites
+- Git
+- JDK version 15 (I have openjdk)
+- Gradle
+
 ## Installation
 
 Clone the project and open it in your IDEA.
