@@ -21,13 +21,11 @@ public class Hydra extends Application {
     }
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         stage.setTitle("Hail Hydra");
         placeStageRandomly(stage);
         stage.setScene(getScene(stage));
-        stage.setOnCloseRequest(e -> {
-            cutOffHead(stage);
-        });
+        stage.setOnCloseRequest(e -> cutOffHead(stage));
         stage.show();
     }
 
