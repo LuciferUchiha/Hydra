@@ -1,4 +1,6 @@
-#Hydra
+# Hydra
+![Gradle build workflow](https://github.com/LuciferUchiha/Hydra/actions/workflows/main.yml/badge.svg)
+
 ## Table of Contents
 
 * [About the Project](#about-the-project)
