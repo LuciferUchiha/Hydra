@@ -5,6 +5,7 @@
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
+* [Prerequisites](#prerequisites)
 * [Installation](#installation)
 * [Usage](#usage)
   * [Run Locally](#run-locally)
