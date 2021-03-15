@@ -23,6 +23,7 @@ public class Hydra extends Application {
     @Override
     public void start(Stage stage) {
         stage.setTitle("Hail Hydra");
+        stage.setResizable(false);
         placeStageRandomly(stage);
         stage.setScene(getScene(stage));
         stage.setOnCloseRequest(e -> cutOffHead(stage));
