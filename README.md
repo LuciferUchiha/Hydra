@@ -77,7 +77,7 @@ jpackage --input build/libs/ \
 --name Hydra \
 --main-jar Hydra-1.0.jar \
 --dest build/packages \
---icon src/main/resources/iconMac.icns \
+--icon src/main/resources/luciferUchihaIcon.icns \
 --type dmg \
 ```
 Meaning of options:
@@ -95,7 +95,7 @@ The above command will create the Hydra-1.0.dmg file for us.
 ### Build MSI package for Windows
 To create a MSI package run the following command in the root of the project:
 ```
-jpackage --input build/libs/ --name Hydra --main-jar Hydra-1.0.jar --dest build/packages --icon src/main/resources/iconWindows.ico --type msi
+jpackage --input build/libs/ --name Hydra --main-jar Hydra-1.0.jar --dest build/packages --icon src/main/resources/luciferUchihaIcon.ico --type msi
 ```
 
 If you don't already have WIX toolset you will prompted to install the toolset from https://wixtoolset.org/.
