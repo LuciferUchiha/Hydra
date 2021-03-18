@@ -10,6 +10,13 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 public class Hydra extends Application {
 
@@ -22,12 +29,32 @@ public class Hydra extends Application {
 
     @Override
     public void start(Stage stage) {
+        growNewHead(stage, true);
+    }
+
+    private void growNewHead(Stage stage, boolean isInitial) {
         stage.setTitle("Hail Hydra");
         stage.setResizable(false);
         placeStageRandomly(stage);
-        stage.setScene(getScene(stage));
+        String message = isInitial ? getMessages().get(0) : getRandomMessage();
+        stage.setScene(getScene(stage, message));
         stage.setOnCloseRequest(e -> cutOffHead(stage));
         stage.show();
+    }
+
+    private String getRandomMessage() {
+        int randomLineIndex = (int) (Math.random() * (getMessages().size() - 1) + 1);
+        return getMessages().get(randomLineIndex);
+    }
+
+    private List<String> getMessages() {
+        List<String> messages = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader("src/main/resources/messages.txt"));) {
+            messages = reader.lines().collect(Collectors.toList());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return messages;
     }
 
     private void placeStageRandomly(Stage stage) {
@@ -38,13 +65,13 @@ public class Hydra extends Application {
         stage.setY(Math.random() * (screenBounds.getHeight() - WINDOW_HEIGHT));
     }
 
-    private Scene getScene(Stage stage) {
+    private Scene getScene(Stage stage, String message) {
         VBox vbox = new VBox();
         vbox.setPrefWidth(WINDOW_WIDTH);
         vbox.setPrefHeight(WINDOW_HEIGHT);
         vbox.setAlignment(Pos.CENTER);
         vbox.setSpacing(10);
-        Label warning = new Label("Cut off one hydra head, two more will grow back in its place.");
+        Label warning = new Label(message);
         Button sword = new Button("close");
         sword.setOnAction(e -> cutOffHead(stage));
         vbox.getChildren().addAll(warning, sword);
@@ -58,8 +85,8 @@ public class Hydra extends Application {
 
     private void growTwoNewHeads() {
         try {
-            start(new Stage());
-            start(new Stage());
+            growNewHead(new Stage(), false);
+            growNewHead(new Stage(), false);
         } catch (Exception e) {
             e.printStackTrace();
         }
