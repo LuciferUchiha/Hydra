@@ -27,6 +27,8 @@ dependencies, like JavaFx for me.
 Why do I want to do this? JPackage allows developers to create an installable package for their JAR files. The 
 user doesn't have to explicitly copy the JAR file or even install Java to run the application. The installable package takes care of all of this.
 
+What does Hydra do you may ask? It simply opens a small window in a random position with a short message. When you try to close the window just it will close but open two new windows in its place. This is to mimic Hydra from the greek and roman mythology, if you cut off one hydra head, two more would grow back in its place.
+
 ### Built With
 * [Java15](https://openjdk.java.net/projects/jdk/15/)
 * [JavaFx11+](https://openjfx.io/index.html)
@@ -61,8 +63,7 @@ gradle test
 ```
 
 ### Close application
-On Windows you can close the application with the Task Manager.
-On macOS, you can close the application with the Activity Monitor.
+Just as Heracles required the assistance of his nephew Iolaus to cut off all of the monster's heads and burn the neck using a sword and fire. You will need assistance in the form of either the Task Manager on Windows or the Activity Monitor on mac.
 
 ### Build JAR
 Execute the gradle jar task in the root folder of the project.
